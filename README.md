@@ -1,8 +1,36 @@
-# React + Vite
+# eCom Store
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Demo of website: https://ecom-store.netlify.app/
+0
+## Description
 
-Currently, two official plugins are available:
+This is a project Noroff Project. E-Commerce website for selling and buying products.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Built With
+- [React](https://reactjs.org/)
+- [styled-components](https://styled-components.com/)
+
+## Getting Started
+
+### Prerequisites
+
+### Installation
+
+1. Clone the repo
+   ```sh
+   git clone git@github.com:wexnox/JS_Framework_CA.git 
+   ```
+2. Install NPM packages
+   ```sh
+    npm install
+    ```
+3. Run the project
+    ```sh
+    npm start
+    ```
+
+## Usage
+
+## Contributing
+
+## Contact
