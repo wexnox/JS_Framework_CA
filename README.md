@@ -1,7 +1,7 @@
 # eCom Store
 
 Demo of website: https://ecom-store.netlify.app/
-0
+
 ## Description
 
 This is a project Noroff Project. E-Commerce website for selling and buying products.
