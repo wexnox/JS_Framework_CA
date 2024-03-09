@@ -1,18 +1,22 @@
-# eCom Store
+# Online Shop
 
-Demo of website: https://ecom-store.netlify.app/
+[//]: # (TODO: Update image)
+![image](https://user-images.githubusercontent.com/52622303/164316813-4b12d99f-aeb7-4069-85cf-e72b3a50ac99.png)
 
+To apply knowledge of React to build an Online Shop.
 ## Description
 
-This is a project Noroff Project. E-Commerce website for selling and buying products.
+E-Commerce website for selling and buying products.
 
 ## Built With
-- [React](https://reactjs.org/)
+
+- [Vite](https://vitejs.dev/)
+- [React.js](https://reactjs.org/)
 - [styled-components](https://styled-components.com/)
 
+- [Tailwind](https://tailwindcss.com/)
 ## Getting Started
 
-### Prerequisites
 
 ### Installation
 
@@ -29,8 +33,4 @@ This is a project Noroff Project. E-Commerce website for selling and buying prod
     npm start
     ```
 
-## Usage
 
-## Contributing
-
-## Contact
