@@ -5,7 +5,7 @@ import { API_BASE_URL } from "../../settings/constants.js";
 import { CartContext } from '../../context/CartContext.jsx';
 
 function ProductDetail() {
-    const { addToCart } = useContext(CartContext); // Use addToCart instead of dispatch
+    const { addToCart } = useContext(CartContext);
     const { productId } = useParams();
     const [product, setProduct] = useState(null);
 
