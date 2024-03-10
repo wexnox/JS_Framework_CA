@@ -1,6 +1,5 @@
 import React, {createContext, useContext, useEffect, useState} from 'react';
 
-
 export const CartContext = createContext();
 export const useCart = () => useContext(CartContext);
 export const CartProvider = ({ children }) => {
@@ -33,12 +32,29 @@ export const CartProvider = ({ children }) => {
     const removeFromCart = (productId) => {
         setCart(prevCart => prevCart.filter(item => item.id !== productId));
     };
+
+    const increaseQuantity = (productId) => {
+        setCart(currentCart =>
+            currentCart.map(item =>
+                item.id === productId ? { ...item, quantity: item.quantity + 1 } : item,
+            ),
+        );
+    };
+
+    const decreaseQuantity = (productId) => {
+        setCart(currentCart =>
+            currentCart.map(item =>
+                item.id === productId ? { ...item, quantity: Math.max(item.quantity - 1, 1) } : item,
+            ),
+        );
+    };
+
     const clearCart = () => {
         setCart([]);
     };
 
     return (
-        <CartContext.Provider value={{ cart, addToCart, removeFromCart, clearCart }}>
+        <CartContext.Provider value={{ cart, addToCart, removeFromCart, increaseQuantity, decreaseQuantity, clearCart }}>
             {children}
         </CartContext.Provider>
     );
