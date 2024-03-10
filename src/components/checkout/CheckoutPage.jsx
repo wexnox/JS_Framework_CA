@@ -1,9 +1,11 @@
 import React, {useContext } from 'react';
 import {CartContext} from "../../context/CartContext.jsx";
-import { useNavigate } from 'react-router-dom'; // Replace useHistory
-function CheckoutPage({ item }) {
+import { useNavigate } from 'react-router-dom';
+import { MdRemoveShoppingCart, MdAddCircleOutline, MdRemoveCircleOutline } from 'react-icons/md'; // Import icons
 
-    const { cart, clearCart } = useContext(CartContext);
+function CheckoutPage() {
+
+    const { cart, increaseQuantity, decreaseQuantity, removeItem, clearCart } = useContext(CartContext);
     const navigate = useNavigate();
     const total = cart.reduce((acc, curr) => acc + curr.price * curr.quantity, 0);
 
@@ -15,63 +17,38 @@ function CheckoutPage({ item }) {
     return (
 
         <div className="min-w-screen min-h-screen bg-gray-50 py-5">
-            <div className="px-5">
-                <div className="mb-2">
-                    <a href="#" className="focus:outline-none hover:underline text-gray-500 text-sm"><i className="mdi mdi-arrow-left text-gray-400"></i>Back</a>
-                </div>
-                <div className="mb-2">
-                    <h1 className="text-3xl md:text-5xl font-bold text-gray-600">Checkout. dummy content</h1>
-                </div>
-                <div className="mb-5 text-gray-400">
-                    <a href="#" className="focus:outline-none hover:underline text-gray-500">Home</a> / <a href="#" className="focus:outline-none hover:underline text-gray-500">Cart</a> / <span className="text-gray-600">Checkout</span>
-                </div>
-            </div>
-            <div className="w-full bg-white border-t border-b border-gray-200 px-5 py-10 text-gray-800">
-                <div className="w-full">
-                    <div className="-mx-3 md:flex items-start">
-                        <div className="px-3 md:w-7/12 lg:pr-10">
-                            {/*List of item in cart*/}
-                            {cart.map((item, index) => (
-                            <div key={item.id || index} className="w-full mx-auto text-gray-800 font-light mb-6 border-b border-gray-200 pb-6">
-                                <div className="w-full flex items-center">
-                                    <div className="overflow-hidden rounded-lg w-16 h-16 bg-gray-50 border border-gray-200">
-                                        <img src={item.image} alt="Product Display"/>
-                                    </div>
-                                    <div className="flex-grow pl-3">
-                                        <h6 className="font-semibold uppercase text-gray-600">{item.title}</h6>
-                                        <p className="text-gray-400">x {item.quantity}</p>
-                                    </div>
-                                    <div>
-                                        <span
-                                            className="font-semibold text-gray-600 text-xl">${item.price.toFixed(2)}</span>
-                                    </div>
+            <div className="container mx-auto px-4">
+                <div className="flex flex-col items-center">
+                    <h1 className="text-3xl md:text-5xl font-bold text-gray-600 mb-8">Checkout</h1>
+                    {cart.map((item, index) => (
+                        <div key={item.id || index}
+                             className="w-full flex items-center justify-between bg-white p-4 rounded-lg shadow mb-4">
+                            <img className="w-16 h-16 rounded mr-4" src={item.image} alt={item.title}/>
+                            <div className="flex-grow">
+                                <h6 className="font-semibold text-gray-600">{item.title}</h6>
+                                <div className="flex items-center">
+                                    <MdRemoveCircleOutline className="text-red-500 cursor-pointer"
+                                                           onClick={() => decreaseQuantity(item.id)}/>
+                                    <span className="mx-2">x {item.quantity}</span>
+                                    <MdAddCircleOutline className="text-green-500 cursor-pointer"
+                                                        onClick={() => increaseQuantity(item.id)}/>
                                 </div>
                             </div>
-                            ))}
-                            <div className="mb-6 pb-6 border-b border-gray-200 md:border-none text-gray-800 text-xl">
-                                <div className="w-full flex items-center">
-                                    <div className="flex-grow">
-                                        <span className="text-gray-600">Total</span>
-                                    </div>
-                                    <div className="pl-3">
-                                        <span className="font-semibold text-gray-400 text-sm">USD</span>
-                                        <span className="font-semibold">${total.toFixed(2)}</span>
-                                    </div>
-                                </div>
-                            </div>
+                            <span className="font-semibold text-gray-600 text-xl">${item.price.toFixed(2)}</span>
+                            <MdRemoveShoppingCart className="text-red-500 cursor-pointer ml-4"
+                                                  onClick={() => removeItem(item.id)}/>
                         </div>
-                        <div className="px-3 md:w-5/12">
-                            <div>
-                                <button
-                                    onClick={handleCheckout}
-                                    className="block w-full max-w-xs mx-auto bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-2 font-semibold">
-                                    <i className="mdi mdi-lock-outline mr-1"></i>PAY NOW</button>
-                            </div>
-                        </div>
+                    ))}
+                    <div className="text-xl font-semibold mt-4">
+                        Total: <span className="text-gray-600">${total.toFixed(2)}</span>
                     </div>
+                    <button
+                        onClick={handleCheckout}
+                        className="mt-6 bg-indigo-500 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50 transition duration-150 ease-in-out">
+                        PAY NOW
+                    </button>
                 </div>
             </div>
-
         </div>
 
     );
