@@ -1,7 +1,7 @@
 // vite.config.js
 import { defineConfig } from 'vite'
 import reactRefresh from '@vitejs/plugin-react-refresh'
-import tailwindcss from 'tailwindcss'
+import tailwindcss from '@tailwindcss/postcss'
 import autoprefixer from 'autoprefixer'
 
 export default defineConfig({
