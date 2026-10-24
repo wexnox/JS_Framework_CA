@@ -1,10 +1,10 @@
 import React from 'react';
 import Navbar from './Navbar.jsx';
 
-const Header = ({ cartItems, products }) => {
+const Header = () => {
     return (
         <header>
-            <Navbar cartItems={cartItems} products={products} />
+            <Navbar />
         </header>
     );
 }

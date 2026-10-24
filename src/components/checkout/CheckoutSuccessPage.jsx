@@ -1,23 +1,38 @@
-import React from 'react';
+import React, { useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from "react-helmet-async";
+import { CartContext } from "../../context/CartContext.jsx";
 
 function CheckoutSuccessPage() {
+    const { clearCart } = useContext(CartContext);
+
+    useEffect(() => {
+        clearCart();
+    }, [clearCart]);
+
     return (
-        <div className="flex items-center justify-center h-screen bg-gray-50">
-            <div className="text-center p-10 bg-white rounded-lg shadow-xl">
-                <svg className="mx-auto mb-4 w-16 h-16 text-green-500" fill="none" viewBox="0 0 24 24"
-                     stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                          d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                </svg>
-                <h2 className="text-2xl font-bold mb-4">Order Successful!</h2>
-                <p className="mb-6">Thank you for your purchase. Your order has been successfully placed.</p>
-                <Link to="/products"
-                      className="inline-block px-6 py-3 bg-green-500 text-white rounded hover:bg-green-600 transition-colors duration-150">
-                    Back to Store
-                </Link>
+        <>
+            <Helmet>
+                <title>Success! - eShop</title>
+            </Helmet>
+            <div className="flex items-center justify-center min-h-[60vh] bg-gray-50 px-4">
+                <div className="text-center p-12 bg-white rounded-3xl shadow-2xl max-w-md w-full border border-gray-100">
+                    <div className="mx-auto mb-8 w-24 h-24 bg-green-100 rounded-full flex items-center justify-center shadow-inner">
+                        <svg className="w-14 h-14 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                        </svg>
+                    </div>
+                    <h1 className="text-3xl font-extrabold mb-4 text-gray-900">Bestillingen er fullført!</h1>
+                    <p className="text-gray-700 text-lg mb-10 leading-relaxed">
+                        Takk for din handel. Din bestilling er nå mottatt og blir behandlet.
+                    </p>
+                    <Link to="/"
+                        className="inline-block w-full px-6 py-4 bg-blue-700 text-white font-bold rounded-xl hover:bg-blue-800 transition-all shadow-lg focus:outline-none focus:ring-4 focus:ring-blue-300 transform hover:scale-[1.02] active:scale-[0.98]">
+                        Tilbake til butikken
+                    </Link>
+                </div>
             </div>
-        </div>
+        </>
     );
 }
 
