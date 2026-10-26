@@ -22,13 +22,13 @@ function CheckoutSuccessPage() {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                         </svg>
                     </div>
-                    <h1 className="text-3xl font-extrabold mb-4 text-gray-900">Bestillingen er fullført!</h1>
+                    <h1 className="text-3xl font-extrabold mb-4 text-gray-900">Your order was successful!</h1>
                     <p className="text-gray-700 text-lg mb-10 leading-relaxed">
-                        Takk for din handel. Din bestilling er nå mottatt og blir behandlet.
+                        Thank you for your purchase. Your order has been received and is being processed.
                     </p>
                     <Link to="/"
                         className="inline-block w-full px-6 py-4 bg-blue-700 text-white font-bold rounded-xl hover:bg-blue-800 transition-all shadow-lg focus:outline-none focus:ring-4 focus:ring-blue-300 transform hover:scale-[1.02] active:scale-[0.98]">
-                        Tilbake til butikken
+                        Back to the store
                     </Link>
                 </div>
             </div>

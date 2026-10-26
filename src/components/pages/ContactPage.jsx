@@ -75,7 +75,7 @@ const ContactPage = () => {
                     ) : (
                         <form onSubmit={handleSubmit} noValidate>
                             <div className="mb-4">
-                                <label htmlFor="fullName" className="block text-gray-800 font-bold mb-2">Fullt navn</label>
+                                <label htmlFor="fullName" className="block text-gray-800 font-bold mb-2">Full name</label>
                                 <input
                                     type="text"
                                     id="fullName"
@@ -83,7 +83,7 @@ const ContactPage = () => {
                                     value={formData.fullName}
                                     onChange={handleChange}
                                     className={`w-full p-3 border rounded-lg focus:outline-none focus:ring-2 ${errors.fullName ? 'border-red-600 focus:ring-red-200' : 'border-gray-400 focus:ring-blue-700'}`}
-                                    placeholder="Ditt navn"
+                                    placeholder="Your name"
                                     required
                                     aria-invalid={!!errors.fullName}
                                     aria-describedby={errors.fullName ? "fullName-error" : undefined}
@@ -92,7 +92,7 @@ const ContactPage = () => {
                             </div>
 
                             <div className="mb-4">
-                                <label htmlFor="subject" className="block text-gray-800 font-bold mb-2">Emne</label>
+                                <label htmlFor="subject" className="block text-gray-800 font-bold mb-2">Subject</label>
                                 <input
                                     type="text"
                                     id="subject"
@@ -100,7 +100,7 @@ const ContactPage = () => {
                                     value={formData.subject}
                                     onChange={handleChange}
                                     className={`w-full p-3 border rounded-lg focus:outline-none focus:ring-2 ${errors.subject ? 'border-red-600 focus:ring-red-200' : 'border-gray-400 focus:ring-blue-700'}`}
-                                    placeholder="Emne"
+                                    placeholder="Subject"
                                     required
                                     aria-invalid={!!errors.subject}
                                     aria-describedby={errors.subject ? "subject-error" : undefined}
@@ -109,7 +109,7 @@ const ContactPage = () => {
                             </div>
 
                             <div className="mb-4">
-                                <label htmlFor="email" className="block text-gray-800 font-bold mb-2">E-post</label>
+                                <label htmlFor="email" className="block text-gray-800 font-bold mb-2">Email</label>
                                 <input
                                     type="email"
                                     id="email"
@@ -117,7 +117,7 @@ const ContactPage = () => {
                                     value={formData.email}
                                     onChange={handleChange}
                                     className={`w-full p-3 border rounded-lg focus:outline-none focus:ring-2 ${errors.email ? 'border-red-600 focus:ring-red-200' : 'border-gray-400 focus:ring-blue-700'}`}
-                                    placeholder="din.epost@eksempel.no"
+                                    placeholder="your.email@example.com"
                                     required
                                     aria-invalid={!!errors.email}
                                     aria-describedby={errors.email ? "email-error" : undefined}
@@ -126,7 +126,7 @@ const ContactPage = () => {
                             </div>
 
                             <div className="mb-6">
-                                <label htmlFor="body" className="block text-gray-800 font-bold mb-2">Melding</label>
+                                <label htmlFor="body" className="block text-gray-800 font-bold mb-2">Message</label>
                                 <textarea
                                     id="body"
                                     name="body"
@@ -134,7 +134,7 @@ const ContactPage = () => {
                                     value={formData.body}
                                     onChange={handleChange}
                                     className={`w-full p-3 border rounded-lg focus:outline-none focus:ring-2 ${errors.body ? 'border-red-600 focus:ring-red-200' : 'border-gray-400 focus:ring-blue-700'}`}
-                                    placeholder="Hva kan vi hjelpe deg med?"
+                                    placeholder="How can we help you?"
                                     required
                                     aria-invalid={!!errors.body}
                                     aria-describedby={errors.body ? "body-error" : undefined}
@@ -146,7 +146,7 @@ const ContactPage = () => {
                                 type="submit"
                                 className="w-full bg-blue-700 text-white font-bold py-3 rounded-lg hover:bg-blue-800 transition-colors shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-700 focus:ring-offset-2"
                             >
-                                Send melding
+                                Send message
                             </button>
                         </form>
                     )}

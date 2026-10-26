@@ -24,8 +24,8 @@ function ProductDetail() {
         });
     }, [productId]);
 
-    if (isLoading) return <div className="text-center mt-10" role="status">Laster produktinformasjon...</div>;
-    if (isError || !product) return <div className="text-center mt-10 text-red-700 font-bold" role="alert">Feil ved lasting av produktinformasjon.</div>;
+    if (isLoading) return <div className="text-center mt-10" role="status">Loading product...</div>;
+    if (isError || !product) return <div className="text-center mt-10 text-red-700 font-bold" role="alert">Error loading product.</div>;
 
     const discount = product.price - product.discountedPrice;
     const hasDiscount = discount > 0;
@@ -54,7 +54,7 @@ function ProductDetail() {
                                         <span className="text-xl text-gray-500 line-through">${product.price.toFixed(2)}</span>
                                     </div>
                                     <div className="mt-2 text-green-700 font-bold flex items-center gap-2">
-                                        <span className="bg-green-100 px-2 py-1 rounded text-sm">Du sparer ${discount.toFixed(2)} ({discountPercentage}%)</span>
+                                        <span className="bg-green-100 px-2 py-1 rounded text-sm">You save ${discount.toFixed(2)} ({discountPercentage}%)</span>
                                     </div>
                                 </div>
                             ) : (
@@ -65,18 +65,18 @@ function ProductDetail() {
                         <button
                             className="bg-blue-700 hover:bg-blue-800 text-white font-bold py-3 md:py-4 px-8 md:px-10 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98] mb-8 focus:outline-none focus:ring-4 focus:ring-blue-300"
                             onClick={() => addToCart(product)}>
-                            Legg i handlevogn
+                            Add to cart
                         </button>
 
                         <section className="border-t border-gray-100 pt-8">
-                            <h2 className="text-2xl font-bold mb-6 text-gray-900">Anmeldelser</h2>
+                            <h2 className="text-2xl font-bold mb-6 text-gray-900">Reviews</h2>
                             {product.reviews && product.reviews.length > 0 ? (
                                 <div className="space-y-6">
                                     {product.reviews.map((review, index) => (
                                         <div key={review.id || index} className="bg-gray-50 p-6 rounded-xl border border-gray-100">
                                             <div className="flex justify-between items-center mb-3">
                                                 <span className="font-bold text-gray-900">{review.username}</span>
-                                                <div className="text-yellow-500 flex" aria-label={`Vurdering: ${review.rating} av 5 stjerner`}>
+                                                <div className="text-yellow-500 flex" aria-label={`Rating: ${review.rating} out of 5 stars`}>
                                                     {[...Array(5)].map((_, i) => (
                                                         <span key={i} aria-hidden="true">
                                                             {i < review.rating ? "★" : "☆"}
@@ -89,7 +89,7 @@ function ProductDetail() {
                                     ))}
                                 </div>
                             ) : (
-                                <p className="text-gray-500 italic">Ingen anmeldelser for dette produktet ennå.</p>
+                                <p className="text-gray-500 italic">No reviews for this product yet.</p>
                             )}
                         </section>
 

@@ -5,21 +5,21 @@ const AboutPage = () => {
     return (
         <>
             <Helmet>
-                <title>About Us - Your Site's Name</title>
-                <meta name="description" content="Detailed description about us." />
+                <title>About Us - eShop</title>
+                <meta name="description" content="Learn more about eShop, your destination for quality products online." />
             </Helmet>
             <div className="container mx-auto px-4 py-16 max-w-3xl">
                 <article className="bg-white rounded-2xl shadow-xl p-8 md:p-12 border border-gray-100">
-                    <h1 className="font-extrabold text-4xl mb-8 text-center text-gray-900">Om oss</h1>
+                    <h1 className="font-extrabold text-4xl mb-8 text-center text-gray-900">About us</h1>
                     <div className="prose prose-lg text-gray-700 leading-relaxed">
                         <p className="mb-6">
-                            Velkommen til eShop, din destinasjon for kvalitetsprodukter på nett. Vi brenner for å levere den beste handelsopplevelsen til våre kunder, med fokus på brukervennlighet og kvalitet.
+                            Welcome to eShop, your destination for quality products online. We are passionate about delivering the best shopping experience to our customers, with a focus on usability and quality.
                         </p>
                         <p className="mb-6">
-                            Vårt mål er å tilby et variert utvalg av produkter som møter dine behov, enten du leter etter det nyeste innen elektronikk, mote eller hjemmeartikler.
+                            Our goal is to offer a wide selection of products that meet your needs, whether you are looking for the latest in electronics, fashion or home goods.
                         </p>
                         <p>
-                            Denne applikasjonen er utviklet med fokus på universell utforming (UU) og tilgjengelighet, slik at alle kan handle trygt og enkelt hos oss.
+                            This application is built with a focus on universal design and accessibility, so that everyone can shop safely and easily with us.
                         </p>
                     </div>
                 </article>
