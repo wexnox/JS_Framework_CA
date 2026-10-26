@@ -122,9 +122,9 @@ You are tasked with build out the following pages for an eCom store:
 
 ## **Delivery**
 
-Deploy your website on Netlify.
+Deploy your website.
 
-Please submit your public GitHub repository URL and the URL for your Netlify live site.
+Please submit your public GitHub repository URL and the URL for your live site.
 
 > Please make sure to exclude node_modules by using a .gitignore file.
 >
