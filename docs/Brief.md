@@ -118,7 +118,7 @@ You are tasked with build out the following pages for an eCom store:
     16.5 Submit button
 
 18. console.log the data from the form once validation requirements are met.
-19. Once your project is done, deploy it to Netlify.
+19. Once your project is done, deploy it.
 
 ## **Delivery**
 
